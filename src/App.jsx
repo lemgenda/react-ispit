@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { setUsername, resetUser, fetchUserData } from './store/userSlice';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -10,48 +11,23 @@ import './App.css';
 library.add(fas, fab);
 
 class App extends Component {
-  state = {
-    username: '',
-    user: null,
-    repos: [],
-    loading: false,
-  };
-
   handleInputChange = (e) => {
-    this.setState({ username: e.target.value });
+    this.props.setUsername(e.target.value);
   };
 
-  fetchUserData = async () => {
-    const { username } = this.state;
-    if (!username.trim()) return;
-
-    this.setState({ loading: true });
-
-    try {
-      const userRes = await axios.get(`https://api.github.com/users/${username}`);
-      const reposRes = await axios.get(`https://api.github.com/users/${username}/repos`);
-
-      this.setState({
-        user: userRes.data,
-        repos: reposRes.data,
-        loading: false,
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      this.setState({ loading: false });
+  fetchUserData = () => {
+    const { username, fetchUserData } = this.props;
+    if (username.trim()) {
+      fetchUserData(username);
     }
   };
 
   handleReset = () => {
-    this.setState({
-      username: '',
-      user: null,
-      repos: [],
-    });
+    this.props.resetUser();
   };
 
   render() {
-    const { username, user, repos, loading } = this.state;
+    const { username, user, repos, loading } = this.props;
 
     return (
       <div className="container">
@@ -78,4 +54,17 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  username: state.user.username,
+  user: state.user.user,
+  repos: state.user.repos,
+  loading: state.user.loading,
+});
+
+const mapDispatchToProps = {
+  setUsername,
+  resetUser,
+  fetchUserData,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

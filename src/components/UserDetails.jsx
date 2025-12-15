@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RepoList from './RepoList';
-
 import './UserDetails.css';
 
 class UserDetails extends Component {
@@ -16,7 +15,7 @@ class UserDetails extends Component {
                 <h2>{user.name}</h2>
                 <p><strong>Lokacija:</strong> {user.location || 'Not specified'}</p>
                 <p><strong>Bio:</strong> {user.bio || 'No bio available'}</p>
-                <h3>Repositoriji:</h3>
+
                 <RepoList repos={repos} />
             </div>
         );

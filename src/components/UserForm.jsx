@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import './UserForm.css';
@@ -23,6 +22,7 @@ const UserForm = ({ username, onInputChange, onSearch, onReset }) => {
                         value={username}
                         onChange={onInputChange}
                         className="github-input"
+                        placeholder="npr. octocat"
                         autoFocus
                     />
                 </div>
@@ -49,13 +49,6 @@ const UserForm = ({ username, onInputChange, onSearch, onReset }) => {
             </form>
         </div>
     );
-};
-
-UserForm.propTypes = {
-    username: PropTypes.string.isRequired,
-    onInputChange: PropTypes.func.isRequired,
-    onSearch: PropTypes.func.isRequired,
-    onReset: PropTypes.func.isRequired,
 };
 
 export default UserForm;
