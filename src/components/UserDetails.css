@@ -76,18 +76,6 @@
     background: #f0f7ff;
 }
 
-.info-item svg {
-    color: #586069;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.info-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 .info-label {
     font-size: 0.85rem;
     color: #586069;
@@ -102,50 +90,6 @@
     font-weight: 500;
 }
 
-.info-value.link {
-    color: #0366d6;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.info-value.link:hover {
-    color: #005cc5;
-    text-decoration: underline;
-}
-
-/* Statistics */
-.profile-stats {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, #f6f8fa 0%, #ebf0f4 100%);
-    border-radius: 10px;
-    border: 1px solid #e1e4e8;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-}
-
-.stat-number {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #24292e;
-    margin-bottom: 4px;
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: #586069;
-    font-weight: 500;
-}
-
 /* Bio sekcija */
 .profile-bio-section {
     padding: 30px;
@@ -153,21 +97,10 @@
     border-top: 1px solid #eaecef;
 }
 
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.section-header svg {
-    color: #0366d6;
-}
-
 .section-header h3 {
     color: #24292e;
     font-size: 1.3rem;
-    margin: 0;
+    margin: 0 0 20px 0;
     font-weight: 600;
 }
 
@@ -209,19 +142,6 @@
 
     .profile-info-grid {
         grid-template-columns: 1fr;
-    }
-
-    .profile-stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .stat-item {
-        padding: 15px 10px;
-    }
-
-    .stat-number {
-        font-size: 1.5rem;
     }
 
     .profile-bio-section,

@@ -7,15 +7,8 @@
 .user-form h2 {
     color: #24292e;
     font-size: 1.8rem;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.form-subtitle {
-    color: #586069;
-    font-size: 0.95rem;
     margin-bottom: 30px;
-    line-height: 1.4;
+    font-weight: 600;
 }
 
 .github-form {
@@ -42,7 +35,7 @@
 
 .github-input {
     width: 100%;
-    padding: 14px;
+    padding: 14px 14px 14px 45px;
     font-size: 1rem;
     border: 2px solid #e1e4e8;
     border-radius: 8px;
@@ -67,10 +60,10 @@
 .button-group {
     display: flex;
     gap: 12px;
-    margin-bottom: 20px;
 }
 
-.search-btn, .reset-btn {
+.search-btn,
+.reset-btn {
     flex: 1;
     padding: 14px 20px;
     font-size: 0.95rem;
@@ -122,25 +115,6 @@
     transform: translateY(0);
 }
 
-.form-hint {
-    background: #f6f8fa;
-    border-radius: 6px;
-    padding: 12px 15px;
-    border-left: 3px solid #0366d6;
-    margin-top: 15px;
-}
-
-.form-hint p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #586069;
-    line-height: 1.4;
-}
-
-.form-hint strong {
-    color: #24292e;
-}
-
 /* Responsive design */
 @media (max-width: 600px) {
     .user-form h2 {
@@ -155,7 +129,8 @@
         flex-direction: column;
     }
 
-    .search-btn, .reset-btn {
+    .search-btn,
+    .reset-btn {
         width: 100%;
     }
 }
